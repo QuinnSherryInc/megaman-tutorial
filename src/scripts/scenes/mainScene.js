@@ -12,7 +12,7 @@ export default class MainScene extends Phaser.Scene {
 		
 		//Preload level assets
 		
-        this.load.tilemapTiledJSON('level-template', '../../assets/maps/level1.json');
+        this.load.tilemapTiledJSON('level1-tileset', '../../assets/maps/level1.json');
         this.load.image('stage_image', '../../assets/img/level-template.png');
 		
 		this.load.multiatlas('mm', '../../assets/sprites/mm.json', '../../assets/sprites');
@@ -99,7 +99,7 @@ export default class MainScene extends Phaser.Scene {
 		
 		//Setup level map
         this.stage = this.make.tilemap({
-            key: 'level-template',
+            key: 'level1-tileset',
             tileWidth: 16,
             tileHeight: 16,
             width: 200,
@@ -107,7 +107,7 @@ export default class MainScene extends Phaser.Scene {
         });
 		
 		//Map tileset image
-        this.tileSet = this.stage.addTilesetImage('level-template', 'stage_image');
+        this.tileSet = this.stage.addTilesetImage('level1-tileset', 'stage_image');
 
 		//Create separate layers
         this.mainLayer = this.stage.createStaticLayer('Main', this.tileSet, 0, 0);
